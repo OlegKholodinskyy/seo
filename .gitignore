@@ -1,0 +1,21 @@
+*/target/
+target/
+*/target/*
+.classpath
+.project
+.settings
+.idea/
+login.properties
+
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.exe
+
+*.iml
+*.idea
+*.class
+
+login.properties
