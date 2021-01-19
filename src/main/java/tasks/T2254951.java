@@ -33,7 +33,7 @@ public class T2254951 extends Task {
         }
 
         String listOfResultXPath = "//div[@class='vc_btn3-container vc_btn3-inline']/a";
-        StringBuilder sbResult = new TaskSerchOnly(driver).doTaskSerchOnly(linkInsideFacebook, listOfResultXPath, log);
+        StringBuilder sbResult = new TaskSerchOnly(driver).doTaskSerchOnly(linkInsideFacebook, listOfResultXPath, log, 6);
         return sbResult;
     }
 }

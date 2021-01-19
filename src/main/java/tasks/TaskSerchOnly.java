@@ -19,7 +19,7 @@ public class TaskSerchOnly {
         this.driver = driver;
     }
 
-    public StringBuilder doTaskSerchOnly(String url, String listOfResultXPath, Logger log) {
+    public StringBuilder doTaskSerchOnly(String url, String listOfResultXPath, Logger log, int count) {
         StringBuilder sb = new StringBuilder("");
         WebElement element = driver.findElement(By.xpath(url));
         navigatorHelper.timeout(5, 10);
@@ -43,14 +43,20 @@ public class TaskSerchOnly {
 //        List<WebElement> listOfResult = driver.findElements(By.xpath("//a[contains(@href, 'https://cse.google.com')]"));    // 2419756
 
         List<WebElement> listOfResult = driver.findElements(By.xpath(listOfResultXPath));
-        String selectLinkOpeninNewTab = Keys.chord(Keys.CONTROL, Keys.RETURN);
+     //   String selectLinkOpeninNewTab = Keys.chord(Keys.CONTROL, Keys.RETURN);
 
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < count; i++) {
             navigatorHelper.timeout(5, 6);
 
-            listOfResult.get(i).sendKeys(selectLinkOpeninNewTab);
 
+            driver.findElement(By.xpath("//input[@id='gsc-i-id1']")).clear();
+            driver.findElement(By.xpath("//input[@id='gsc-i-id1']")).sendKeys(listOfResult.get(i).getText());
+            driver.findElement(By.xpath("//button[@class='gsc-search-button gsc-search-button-v2']")).click();
             navigatorHelper.switchToLastTab(driver);
+
+
+          //  listOfResult.get(i).sendKeys(selectLinkOpeninNewTab);
+
             sb.append(driver.getCurrentUrl() + "\n");
             log.info("Add to StringBuffer : " + driver.getCurrentUrl() + "\n");
 

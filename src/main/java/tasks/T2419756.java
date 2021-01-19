@@ -27,7 +27,7 @@ public class T2419756  extends Task{
         }
 
         String listOfResultXPath = "//a[contains(@href, 'https://cse.google.com')]";
-        StringBuilder sbResult = new TaskSerchOnly(driver).doTaskSerchOnly(linkInsideFacebook, listOfResultXPath, log);
+        StringBuilder sbResult = new TaskSerchOnly(driver).doTaskSerchOnly(linkInsideFacebook, listOfResultXPath, log,6);
         return sbResult;
     }
 

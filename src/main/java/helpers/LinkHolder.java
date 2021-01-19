@@ -32,12 +32,52 @@ public final class LinkHolder {
         results.put("газелькин", new String[][]{della, dresskot, sharmexcursions});
         results.put("клининговая компания", new String[][]{forline, chisto, bestCleaning});
         results.put("форекс", new String[][]{canlimarket});
-        results.put("ремонт квартир москва", new String[][]{www0200200v, sknebo});
+        results.put("ремонт квартир москва", new String[][]{www0200200v, sknebo, svoiservice, petkostroy});
         results.put("доставка цветов и букетов", new String[][]{caramellu, sunrose});
         results.put("ремонт под ключ", new String[][]{yaskravaliniya});
         results.put("расчетный счет", new String[][]{pandacash, artzvit});
         results.put("нарколог в москве", new String[][]{medcm, narkohelp, rehabclinic});
+        results.put("быстрая доставка еды москва", new String [][]{russkoepodvorie, sushifast});
     }
+
+
+    String[] sushifast = {
+            "www.sushifast.ru",
+            "sushifast.ru/menu/",
+            "sushifast.ru/delivery/",
+            "sushifast.ru/feedback/",
+            "sushifast.ru/action/",
+            "instagram.com/sushifast_nekrasovka/"
+    };
+
+    String[] russkoepodvorie = {
+            "www.russkoepodvorie.com",
+            "/banketnye-zaly-v-moskve/",
+            "instagram.com/russkoepodvorie_moscow/",
+            "facebook.com/RusskoePodvorie/",
+            "/catalog/category/dostavka/",
+            "facebook.com/RusskoePodvorie/"
+    };
+
+    String[] petkostroy = {
+            "www.petko-stroy.com",
+            "./о-нас",
+            "./портфолио",
+            "./контакты",
+            "static.wixstatic.com/media",
+            "./о-нас"
+    };
+
+    String [] svoiservice = {
+            "www.svoi-service.ru",
+            "/landing/kuxni-landing",
+            "/landing/balkon",
+            "/vakansii",
+            "/vopros-otvet",
+            "/kontakti",
+            "/o-kompanii",
+            "/landing/bath-landing"
+    };
 
     String[] rehabclinic = {
             "www.rehabclinic.ru",

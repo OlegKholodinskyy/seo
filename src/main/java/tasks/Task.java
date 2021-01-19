@@ -54,7 +54,6 @@ public class Task {
                 WebElement startWorkingA = startWorkingList.get(0);
                 startWorkingA.click();
                 navigatorHelper.timeout(7, 10);
-
             }
         }
         navigatorHelper.timeout(6, 8);

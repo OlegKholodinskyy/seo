@@ -42,6 +42,48 @@ public class SeoSprint {
         List<String> listStringTasks = prepredTaskList();
 
         for (String taskId : listStringTasks) {
+
+            if (taskId.equals("taskline_2436988")) {
+                try {
+                    T2436988 t2436988 = new T2436988(taskId, driver);
+                    t2436988.startTask(driver, taskId, log);
+                    StringBuilder sb = t2436988.work(log);
+                    t2436988.endTask(driver, taskId, sb, log);
+                } catch (Exception e) {
+                    log.error("Exception " + "\n" + e.getMessage());
+                    navigatorHelper.closeAllTabsExceptSome(driver, "seoFavoriteTaskPage");
+                    driver.get("https://seosprint.net/earn-task-fav");
+                }
+            }
+
+            if (taskId.equals("taskline_2436990")) {
+                try {
+                    T2436990 t2436990 = new T2436990(taskId, driver);
+                    t2436990.startTask(driver, taskId, log);
+                    StringBuilder sb = t2436990.work(log);
+                    t2436990.endTask(driver, taskId, sb, log);
+                } catch (Exception e) {
+                    log.error("Exception " + "\n" + e.getMessage());
+                    navigatorHelper.closeAllTabsExceptSome(driver, "seoFavoriteTaskPage");
+                    driver.get("https://seosprint.net/earn-task-fav");
+                }
+            }
+
+
+
+            if (taskId.equals("taskline_2441478")) {
+                try {
+                    T2441478 t2441478 = new T2441478(taskId, driver);
+                    t2441478.startTask(driver, taskId, log);
+                    StringBuilder sb = t2441478.work(log);
+                    t2441478.endTask(driver, taskId, sb, log);
+                } catch (Exception e) {
+                    log.error("Exception " + "\n" + e.getMessage());
+                    navigatorHelper.closeAllTabsExceptSome(driver, "seoFavoriteTaskPage");
+                    driver.get("https://seosprint.net/earn-task-fav");
+                }
+            }
+
             if (taskId.equals("taskline_2268848")) {
                 try {
                     T2268848 t2268848 = new T2268848(taskId, driver);
@@ -191,7 +233,6 @@ public class SeoSprint {
                     driver.get("https://seosprint.net/earn-task-fav");
                 }
             }
-
         }
     }
 

@@ -28,7 +28,7 @@ public class T2268848 extends Task {
             skipErrorMessage(driver);
 
             String listOfResultXPath = "//a[contains(@href,'https://cse.google.com/cse?cx=')]";
-            StringBuilder sbResult = new TaskSerchOnly(driver).doTaskSerchOnly(linkInsideFacebook, listOfResultXPath,log);
+            StringBuilder sbResult = new TaskSerchOnly(driver).doTaskSerchOnly(linkInsideFacebook, listOfResultXPath,log,6);
             return sbResult;
         }
     }
