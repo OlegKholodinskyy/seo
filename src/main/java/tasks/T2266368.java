@@ -51,8 +51,8 @@ public class T2266368 extends Task {
         TaskWithExploreSite taskWithExploreSite = new TaskWithExploreSite(driver);
         List<String> searchResultInStringPresentation = taskWithExploreSite.buildSearchResultInStringPresentation(url, searchBlock);
 
-        LinkHolder linkHolder = new LinkHolder();
-        linkHolder.buildMap();
+        LinkHolder linkHolder = LinkHolder.getInstance();
+      //  linkHolder.buildMap();
 
         return taskWithExploreSite.doCircleSearh(linkHolder, searchResultInStringPresentation, log);
     }

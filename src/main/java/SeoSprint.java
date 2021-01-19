@@ -15,7 +15,6 @@ public class SeoSprint {
 
     private WebDriver driver;
     static StartPageSeo startPageSeo;
-    static SurfPageSeo surfPageSeo;
     NavigatorHelper navigatorHelper = new NavigatorHelper(driver);
 
 

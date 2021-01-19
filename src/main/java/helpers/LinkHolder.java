@@ -6,10 +6,20 @@ import java.util.*;
 /**
  * Created by oleg on 30.11.2020.
  */
-public class LinkHolder {
+public final class LinkHolder {
 
-    public LinkHolder() {
+    private static LinkHolder instance;
 
+    private LinkHolder() {
+        buildMap();
+    }
+
+
+    public static LinkHolder getInstance() {
+        if (instance == null) {
+            instance = new LinkHolder();
+        }
+        return instance;
     }
 
 
@@ -26,7 +36,7 @@ public class LinkHolder {
         results.put("доставка цветов и букетов", new String[][]{caramellu, sunrose});
         results.put("ремонт под ключ", new String[][]{yaskravaliniya});
         results.put("расчетный счет", new String[][]{pandacash, artzvit});
-        results.put("нарколог в москве", new String[][]{medcm,narkohelp,rehabclinic});
+        results.put("нарколог в москве", new String[][]{medcm, narkohelp, rehabclinic});
     }
 
     String[] rehabclinic = {
@@ -46,7 +56,6 @@ public class LinkHolder {
             "tseny",
             "o-klinike"
     };
-
 
 
     String[] medcm = {
