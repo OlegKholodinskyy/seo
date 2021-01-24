@@ -102,12 +102,11 @@ public class TaskWithExploreSite {
     }
 
     private StringBuilder goStep2(LinkHolder linkHolder, String randomKey, Logger log) {
-        List<String> resultSearchBlocksInStringPresentation = fillResultSearchInStringPresentation();
 
         int count = 0;
         while (count < 5) {
+            List<String> resultSearchBlocksInStringPresentation = fillResultSearchInStringPresentation();
             String randomResult = linkHolder.getRandomResulrSite(randomKey);
-            //  System.out.println(" randomResult  " + randomResult);
             log.info("step2:  randomResult  " + randomResult);
             for (String s : resultSearchBlocksInStringPresentation) {
                 log.info("step2:  resultSearchBlocksInStringPresentation  " + s);
