@@ -21,7 +21,7 @@ public class T2266359 extends Task {
     public StringBuilder work(Logger log) {
         String linkFacebook = "https://www.facebook.com/Guy-Julius-Caesar-116122016461538";
         //String linkInsideFacebook = "//div[@id='jsc_c_s']//a[contains(@href, '://')]";
-        String linkInsideFacebook = "(//a[contains(@href, 'https://l.facebook.com/l.php')])[2]";
+        String linkInsideFacebook = "//a[contains(@href, 'https://l.facebook.com/l.php')]";
         ((JavascriptExecutor) driver).executeScript("window.open()");
         navigatorHelper.switchToLastTab(driver);
         driver.get(linkFacebook);

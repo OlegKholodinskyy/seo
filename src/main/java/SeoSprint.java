@@ -109,6 +109,7 @@ public class SeoSprint {
                     driver.get("https://seosprint.net/earn-task-fav");
                 }
             }
+
             if (taskId.equals("taskline_2266359")) {
                 try {
                     T2266359 t2266359 = new T2266359(taskId, driver);
@@ -121,6 +122,7 @@ public class SeoSprint {
                     driver.get("https://seosprint.net/earn-task-fav");
                 }
             }
+
             if (taskId.equals("taskline_2261354")) {
                 try {
                     T2261354 t2261354 = new T2261354(taskId, driver);
@@ -133,6 +135,7 @@ public class SeoSprint {
                     driver.get("https://seosprint.net/earn-task-fav");
                 }
             }
+
             if (taskId.equals("taskline_2254951")) {
                 try {
                     T2254951 t2254951 = new T2254951(taskId, driver);

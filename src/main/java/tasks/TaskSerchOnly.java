@@ -5,7 +5,9 @@ import helpers.PageKeeper;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by oleg on 29.09.2020.
@@ -43,19 +45,30 @@ public class TaskSerchOnly {
 //        List<WebElement> listOfResult = driver.findElements(By.xpath("//a[contains(@href, 'https://cse.google.com')]"));    // 2419756
 
         List<WebElement> listOfResult = driver.findElements(By.xpath(listOfResultXPath));
-     //   String selectLinkOpeninNewTab = Keys.chord(Keys.CONTROL, Keys.RETURN);
+        log.info("listOfResult.size() = " + listOfResult.size());
+        String selectLinkOpeninNewTab = Keys.chord(Keys.CONTROL, Keys.RETURN);
+
+        //form list results
+
+        List<String> listTextResults = new ArrayList<String>();
 
         for (int i = 0; i < count; i++) {
+            listTextResults.add(listOfResult.get(i).getText());
+        }
+        System.out.println(" ");
+        for (String s :listTextResults){
+            System.out.println(s);
+        }
+
+        for (String str :listTextResults){
             navigatorHelper.timeout(5, 6);
-
-
             driver.findElement(By.xpath("//input[@id='gsc-i-id1']")).clear();
-            driver.findElement(By.xpath("//input[@id='gsc-i-id1']")).sendKeys(listOfResult.get(i).getText());
-            driver.findElement(By.xpath("//button[@class='gsc-search-button gsc-search-button-v2']")).click();
+            driver.findElement(By.xpath("//input[@id='gsc-i-id1']")).sendKeys(str);
+
+            Set<String> countOfTabsBefore = driver.getWindowHandles();
+            driver.findElement(By.xpath("//button[@class='gsc-search-button gsc-search-button-v2']")).sendKeys(selectLinkOpeninNewTab);
             navigatorHelper.switchToLastTab(driver);
-
-
-          //  listOfResult.get(i).sendKeys(selectLinkOpeninNewTab);
+            Set<String> countOfTabsAfter = driver.getWindowHandles();
 
             sb.append(driver.getCurrentUrl() + "\n");
             log.info("Add to StringBuffer : " + driver.getCurrentUrl() + "\n");
@@ -64,10 +77,14 @@ public class TaskSerchOnly {
             navigatorHelper.timeout(25, 45);
             driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.HOME);
             navigatorHelper.timeout(3, 5);
-            driver.close();
+
+            if (countOfTabsAfter.size() != countOfTabsBefore.size()) {
+                driver.close();
+            } else {
+                driver.navigate().back();
+            }
             navigatorHelper.switchToLastTab(driver);
         }
         return sb;
     }
-
 }

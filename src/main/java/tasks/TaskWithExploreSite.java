@@ -52,7 +52,7 @@ public class TaskWithExploreSite {
         resultBilder.append(driver.getCurrentUrl() + "\n");    // добавити сторінку з що відкрилася з посиланя на фейсбуці
         log.info("Append into StringBuilder : + " + driver.getCurrentUrl() + "\n");
         StringBuilder result = step1(linkHolder, searchResultInStringPresentation, log);
-        resultBilder.append(result);
+        resultBilder.append(result + "\n");
         log.info("Append into StringBuilder : + " + result + "\n");
 
         //   System.out.println("StringBuilder doCircleSearh : " + resultBilder);
@@ -63,7 +63,7 @@ public class TaskWithExploreSite {
     private StringBuilder step1(LinkHolder linkHolder, List<String> searchResultInStringPresentation, Logger log) {
         int count = 0;
         StringBuilder tempBuilder = new StringBuilder("");
-        while (count < 6) {
+        while (count < 11) {
             String randomKey = linkHolder.getRandomKey();
             log.info("randomKey : " + randomKey);
 
@@ -72,7 +72,7 @@ public class TaskWithExploreSite {
                 log.info("  !!!  searchResultInStringPresentation contains : " + trimRandomKey);
                 doSearh(trimRandomKey);
                 String aferDoSearch = driver.getCurrentUrl();
-                StringBuilder res = goStep2(linkHolder, trimRandomKey);
+                StringBuilder res = goStep2(linkHolder, trimRandomKey, log);
                 if (res == null) {
                     // linkHolder do NOT contains any sites from result of search
                     driver.navigate().back();
@@ -101,14 +101,16 @@ public class TaskWithExploreSite {
         return null;
     }
 
-    private StringBuilder goStep2(LinkHolder linkHolder, String randomKey) {
+    private StringBuilder goStep2(LinkHolder linkHolder, String randomKey, Logger log) {
         List<String> resultSearchBlocksInStringPresentation = fillResultSearchInStringPresentation();
 
         int count = 0;
         while (count < 5) {
             String randomResult = linkHolder.getRandomResulrSite(randomKey);
             //  System.out.println(" randomResult  " + randomResult);
+            log.info("step2:  randomResult  " + randomResult);
             for (String s : resultSearchBlocksInStringPresentation) {
+                log.info("step2:  resultSearchBlocksInStringPresentation  " + s);
                 if (s.contains(randomResult)) {
                     //  (в сиску з результатів пошуку (www.)   міститься рандомний результат і більше не перебирати)
                     String xpathLinkPresentetion = "//a[contains(text(),\"" + randomResult + "\" )]";
@@ -148,16 +150,13 @@ public class TaskWithExploreSite {
         }
         List<WebElement> resultSerchBlocks = driver.findElements(By.xpath("//div[@id='adBlock']/div//a[contains(text(), 'www.')]"));
         List<String> resultSearchBlocksInStringPresentation = new ArrayList<String>();
-        System.out.println("resultSearchBlocksInStringPresentation (contains www. : ");
         //заповнюємо масив результатів що висвітило в пошуковику  ;
         for (WebElement e : resultSerchBlocks) {
             resultSearchBlocksInStringPresentation.add(e.getText());
-            System.out.println(e.getText());
         }
-        System.out.println(")");
         return resultSearchBlocksInStringPresentation;
     }
-
+/*
     private String getCrossSearchResult(List<String> resultSearchBlocksInStringPresentation, String randomResult, LinkHolder linkHolder, String randonLink) {
 //        int count = 0;
 //        while (count < 5) {
@@ -171,7 +170,7 @@ public class TaskWithExploreSite {
 //        }
         return null;
     }
-
+*/
     private StringBuilder doSurfSite(String[] links, StringBuilder resultBilder) {
 
         List<String> randomSetLinks = buildRandomArrLinks(links);
@@ -222,8 +221,9 @@ public class TaskWithExploreSite {
         return outputArrayList;
     }
 
-
+/*
     public StringBuilder getStringBuilder() {
         return sb;
     }
+    */
 }

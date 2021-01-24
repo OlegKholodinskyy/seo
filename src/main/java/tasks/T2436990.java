@@ -43,7 +43,8 @@ public class T2436990 extends Task{
 
     public StringBuilder workByTask(Logger log) {
 
-        String url = "//a[contains(@href, 'https://nefsho.ru/')]";
+       // String url ="//a[contains(@href, 'https://l.facebook.com/l.php')]";
+        String url = "//a[@rel='nofollow noopener']";
         String searchBlock = "//div[@id='___gcse_0']/following-sibling::center//a";
         //  String searchBlock = "((//div[@id='td-outer-wrap']/div)[2]//div[@id])[7]//a";
 
@@ -52,7 +53,6 @@ public class T2436990 extends Task{
 
         LinkHolder linkHolder = LinkHolder.getInstance();
         //   linkHolder.buildMap();
-
         return  taskWithExploreSite.doCircleSearh(linkHolder, searchResultInStringPresentation, log);
     }
 }

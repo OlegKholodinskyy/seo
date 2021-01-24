@@ -32,7 +32,7 @@ public final class LinkHolder {
         results.put("газелькин", new String[][]{della, dresskot, sharmexcursions});
         results.put("клининговая компания", new String[][]{forline, chisto, bestCleaning});
         results.put("форекс", new String[][]{canlimarket});
-        results.put("ремонт квартир москва", new String[][]{www0200200v, sknebo, svoiservice, petkostroy});
+        results.put("ремонт квартир москва", new String[][]{www0200200v, ecohyla, sknebo, svoiservice, petkostroy, proffartremont, sstroiprof});
         results.put("доставка цветов и букетов", new String[][]{caramellu, sunrose});
         results.put("ремонт под ключ", new String[][]{yaskravaliniya});
         results.put("расчетный счет", new String[][]{pandacash, artzvit});
@@ -40,6 +40,37 @@ public final class LinkHolder {
         results.put("быстрая доставка еды москва", new String [][]{russkoepodvorie, sushifast});
     }
 
+    String [] ecohyla = {
+            "www.eco-hyla.ru",
+            "aktsii",
+            "kontakty",
+            "kompaniya/sposoby-oplaty",
+            "kompaniya/otkaz-ot-uslugi-i-vozvrat-denezhnykh-sredstv",
+            "kompaniya/oformlenie-zakaza",
+            "uslugi"
+    };
+
+    String[] sstroiprof = {
+            "www.sstroiprof.ru",
+            "#b2",
+            "#b3",
+            "#b4",
+            "#b5",
+            "#b6",
+            "#b1"
+    };
+
+
+
+    String[] proffartremont = {
+    "www.proff-art-remont.ru",
+            "proff-art-remont.ru/potolki",
+            "proff-art-remont.ru/remont-nezhilyh-pomeshhenij",
+            "proff-art-remont.ru/pol",
+            "proff-art-remont.ru/teh-nadzor",
+            "proff-art-remont.ru/prajs-list",
+            "proff-art-remont.ru/remont-kvartir"
+    };
 
     String[] sushifast = {
             "www.sushifast.ru",
@@ -200,7 +231,7 @@ public final class LinkHolder {
             "www.sharm-excursions.net/kruizy",
             "www.sharm-excursions.net/bronirovanie",
             "www.sharm-excursions.net/dopolnitelnaia-informatsiia",
-            "#individual"
+            "www.sharm-excursions.net/kruizy"
     };
 
 
@@ -348,6 +379,7 @@ public final class LinkHolder {
 
 
     public String getRandomKey() {
+        //todo як варіант спробувати перемішати список і взяти перший з результатів
         Set<String> keys = results.keySet();
         //convert HashSet to an array
         String[] arrayStrings = keys.toArray(new String[keys.size()]);
